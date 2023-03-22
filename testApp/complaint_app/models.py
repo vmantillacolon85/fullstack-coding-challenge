@@ -9,9 +9,10 @@ class UserProfile(models.Model):
   district = models.CharField(max_length=5, blank=True, default="")
   party = models.CharField(max_length=50, blank=True, default="", null=True)
   borough = models.CharField(max_length=50, blank=True, default="")
+
   def __str__(self):
     return str(self.user)
-    
+
 class Complaint(models.Model):
   unique_key = models.CharField(max_length=150, blank=True, default="")
   account = models.CharField(max_length=10, blank=True, default="", null=True)
@@ -24,5 +25,6 @@ class Complaint(models.Model):
   council_dist = models.CharField(max_length=10, blank=True, default="", null=True)
   community_board = models.CharField(max_length=150, blank=True, default="", null=True)
   closedate = models.DateField(blank=True, null=True)
+  
   def __str__(self):
     return str(self.unique_key)
